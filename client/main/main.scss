@@ -74,6 +74,10 @@ footer {
 	padding: 40px;
 
 	> .content {
+		@media only screen and (max-width: 700px) {
+			flex-direction: column;
+		}
+
 		display: flex; gap: 40px;
 
 		> * {
