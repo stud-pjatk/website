@@ -20,7 +20,6 @@ for (let i = 0; i < 6; ++i) {
 get('ocra.otf', 'application/x-font-opentype', load('res/ocra.otf'))
 
 get('site.webmanifest', 'application/manifest+json', load('res/site.webmanifest'))
-get('worker.js', 'text/javascript', load('res/worker.js'))
 get('robots.txt', 'text/plain', load('res/robots.txt'))
 
 get('**', 'text/html', load('out/client.htm'))

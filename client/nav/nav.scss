@@ -1,49 +1,65 @@
 nav {
+	@media only screen and (max-width: 700px) {
+		height: 80px;
+	}
+
 	height: 100px;
 	z-index: 100;
 
 	> .content {
 		display: flex; justify-content: space-between; align-items: center;
 		height: 100%;
+	}
 
-		> #nav-logo {
-			display: flex; gap: 4px;
+	#nav-logo {
+		display: flex; gap: 4px;
+		height: 100%;
+		font-family: 'Ocra', sans-serif;
+		
+		> svg {
 			height: 100%;
-			font-family: 'Ocra', sans-serif;
-			
-			> svg {
-				height: 100%;
+		}
+
+		> div {
+			display: flex; flex-direction: column;
+			font-size: 14px;
+		}
+	}
+
+	#nav-links {
+		display: flex; align-items: center; gap: 20px;
+		font-size: 20px;
+
+		> div > div, > a {
+			@media only screen and (max-width: 700px) {
+				display: none !important;
 			}
 
-			> div {
-				display: flex; flex-direction: column;
-				font-size: 14px;
+			display: flex; align-items: center; gap: 10px;
+		}
+
+		> div {
+			position: relative;
+
+			&:hover > .dropdown {
+				display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
 			}
 		}
 
-		> #nav-links {
-			display: flex; align-items: center; gap: 20px;
-			font-size: 20px;
-
-			> div > div, > a {
-				display: flex; align-items: center; gap: 10px;
-			}
-
-			> div {
-				position: relative;
-
-				&:hover > .dropdown {
-					display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
-				}
-			}
-
-			.dropdown {
-				display: none;
-				position: absolute; top: 100%; left: -20px;
-				background: $bg;
-				padding: 20px;
-				border-radius: 10px;
-			}
+		.dropdown {
+			display: none;
+			position: absolute; top: 100%; left: -20px;
+			background: $bg;
+			padding: 20px;
+			border-radius: 10px;
 		}
+	}
+
+	#nav-menu {
+		@media only screen and (max-width: 700px) {
+			display: block !important;
+		}
+		
+		display: none;
 	}
 }
