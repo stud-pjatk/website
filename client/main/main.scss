@@ -1,0 +1,96 @@
+$bg: #ebe6d3;
+$fg: #30201e;
+$ac: #d42031;
+
+@font-face {
+	font-family: Ocra;
+	src: url("ocra.otf");
+}
+
+html, body {
+	margin: 0;
+	background: $bg; color: $fg;
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	@keyframes fade {
+		0% { opacity: 0; } 100% { opacity: 1; }
+	}
+
+	display: flex; flex-direction: column;
+	min-height: 100vh;
+	animation: fade 1s ease-in-out;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+a {
+	position: relative;
+	color: inherit;
+	text-decoration: none;
+	transition: color 200ms, transform 50ms;
+
+	&:hover {
+		color: $ac;
+
+		&::after {
+			width: 100%;
+		}
+	}
+
+	&:active {
+		transform: translateY(2px);
+	}
+
+	&::after {
+		position: absolute; bottom: -5px;
+		content: '';
+		display: block;
+		width: 0%; height: 2px;
+		background: currentColor;
+		transition: width 200ms ease;
+	}
+}
+
+svg {
+	height: 1em;
+	fill: currentColor;
+}
+
+.content {
+	width: 100%; max-width: 1000px; padding: 15px;
+	margin-left: auto; margin-right: auto;
+	box-sizing: border-box;
+}
+
+embed('client/nav/nav.scss')
+
+footer {
+	flex-grow: 1;
+	background: $fg; color: $bg;
+	padding: 40px;
+
+	> .content {
+		display: flex; gap: 40px;
+
+		> * {
+			flex: 1;
+			display: flex; flex-direction: column; gap: 10px;
+
+			> h3 {
+				font-size: 30px;
+				margin: 0;
+			}
+
+			> a, span {
+				font-size: 20px;
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+embed('client/landing/landing.scss')
