@@ -66,6 +66,10 @@ svg {
 	box-sizing: border-box;
 }
 
+.logo {
+	background: $bg;
+}
+
 embed('client/nav/nav.scss')
 
 footer {
