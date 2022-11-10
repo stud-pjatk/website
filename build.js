@@ -29,7 +29,7 @@ async function embed(file) {
 				}
 			}
 
-			file = file.substr(0, i) + embeded + file.substr(i + 10 + filename.length)
+			file = `${file.substr(0, i)}\n${embeded}\n${file.substr(i + 10 + filename.length)}`
 		}
 	}
 	return file

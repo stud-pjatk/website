@@ -1,7 +1,8 @@
+embed('client/landing/landing.js')
+embed('client/wintegration/wintegration.js')
+
 const autoruns = {
-	// 'landing': { func: landingAutorun },
-	// 'learn': { func: learnAutorun },
-	// 'playground': { func: playgroundAutorun },
+	'landing': { func: landingAutorun },
 }
 
 const triggerAutorun = name => {
@@ -31,6 +32,12 @@ const updatePage = path => {
 		page = document.getElementById(splitPath[1])
 		triggerAutorun(splitPath[1])
 	}
+	
+	if (splitPath[1] === 'wintegration') {
+		document.getElementById('wintegrat-banner').setAttribute('background', true)
+	} else {
+		document.getElementById('wintegrat-banner').removeAttribute('background')
+	}
 
 	if (!page) {
 		page = document.getElementById('not-found')
@@ -41,7 +48,7 @@ const updatePage = path => {
 	}
 
 	page.style = '';
-	document.body.scrollTo({ top: 0, behavior: 'smooth' })
+	window.scrollTo({ top: 0, behavior: 'smooth' })
 
 	return path
 }
@@ -59,6 +66,8 @@ const autorun = () => {
 	}
 
 	updatePage(location.pathname)
+
+	wintegralAutorun()
 }
 
 document.addEventListener("DOMContentLoaded", autorun)

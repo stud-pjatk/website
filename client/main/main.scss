@@ -11,16 +11,12 @@ html, body {
 	margin: 0;
 	background: #fff; color: $fg;
 	font-family: 'Lato', sans-serif;
+	overflow-x: hidden;
 }
 
 body {
-	@keyframes fade {
-		0% { opacity: 0; } 100% { opacity: 1; }
-	}
-
 	display: flex; flex-direction: column;
 	min-height: 100vh;
-	animation: fade 1s ease-in-out;
 }
 
 h1, h2, h3, h4, h5 {
@@ -60,6 +56,23 @@ svg {
 	fill: currentColor;
 }
 
+input, textarea {
+	background: $bg;
+	padding: 5px 8px;
+	border: 2px solid $fg;
+	font-family: inherit;
+	font-size: 20px;
+}
+
+.page {
+	@keyframes fly {
+		0% { transform: translateX(25px); }
+	}
+
+	animation: fly 200ms;
+	z-index: 10;
+}
+
 .content {
 	width: 100%; max-width: 1000px; padding: 15px;
 	margin-left: auto; margin-right: auto;
@@ -70,12 +83,14 @@ svg {
 	background: $bg;
 }
 
+embed('client/wintegration/wintegration.scss')
 embed('client/nav/nav.scss')
 
 footer {
 	flex-grow: 1;
 	background: $fg; color: $bg;
 	padding: 40px;
+	z-index: 10;
 
 	> .content {
 		@media only screen and (max-width: 700px) {
@@ -102,3 +117,4 @@ footer {
 }
 
 embed('client/landing/landing.scss')
+embed('client/contact/contact.scss')

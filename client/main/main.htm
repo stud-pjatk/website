@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -32,8 +32,16 @@
 </head>
 
 <body>
+	embed('client/wintegration/banner.htm')
 	embed('client/nav/nav.htm')
+	<div id="not-found" class="page">
+		<div class="content">
+			<h1>Strona której szukasz nie została znaleziona.</h1>
+			<h2>Możesz spróbować ją wyszukać.</h2>
+		</div>
+	</div>
 	embed('client/landing/landing.htm')
+	embed('client/wintegration/wintegration.htm')
 	<div id="news" class="page"></div>
 	<div id="psych-aid" class="page"></div>
 	<div id="stud-guide" class="page"></div>
@@ -42,7 +50,7 @@
 	<div id="about-us" class="page"></div>
 	<div id="members" class="page"></div>
 	<div id="committees" class="page"></div>
-	<div id="contact" class="page"></div>
+	embed('client/contact/contact.htm')
 	<footer>
 		<div class="content">
 			<div>

@@ -1,0 +1,23 @@
+#contact {
+	form {
+		display: flex; flex-direction: column; gap: 20px;
+
+		> .inline {
+			display: flex; flex-direction: row; align-items: center;
+
+			> input {
+				flex: 1;
+			}
+		}
+		
+		> label {
+			display: flex; flex-direction: column; gap: 10px;
+			font-size: 20px;
+
+			> textarea {
+				height: 200px; min-height: 100px;
+				resize: vertical;
+			}
+		}
+	}
+}
