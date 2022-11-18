@@ -1,4 +1,4 @@
-$bg: #ebe6d3;
+$bg: #ffffff;
 $fg: #30201e;
 $ac: #d42031;
 
@@ -8,15 +8,20 @@ $ac: #d42031;
 }
 
 html, body {
+	height: 100%;
+	background: $bg; color: $fg;
 	margin: 0;
-	background: #fff; color: $fg;
 	font-family: 'Lato', sans-serif;
-	overflow-x: hidden;
+}
+
+html {
+	overflow: hidden;
 }
 
 body {
 	display: flex; flex-direction: column;
 	min-height: 100vh;
+	overflow: hidden auto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -42,7 +47,7 @@ a {
 	}
 
 	&::after {
-		position: absolute; bottom: -5px;
+		position: absolute; left: 0; bottom: -4px;
 		content: '';
 		display: block;
 		width: 0%; height: 2px;
@@ -56,12 +61,16 @@ svg {
 	fill: currentColor;
 }
 
-input, textarea {
+button {
+	cursor: pointer;
+}
+
+button, input, textarea {
 	background: $bg;
 	padding: 5px 8px;
 	border: 2px solid $fg;
 	font-family: inherit;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .page {
@@ -80,41 +89,16 @@ input, textarea {
 }
 
 .logo {
-	background: $bg;
-}
-
-embed('client/wintegration/wintegration.scss')
-embed('client/nav/nav.scss')
-
-footer {
-	flex-grow: 1;
-	background: $fg; color: $bg;
-	padding: 40px;
-	z-index: 10;
-
-	> .content {
-		@media only screen and (max-width: 700px) {
-			flex-direction: column;
-		}
-
-		display: flex; gap: 40px;
-
-		> * {
-			flex: 1;
-			display: flex; flex-direction: column; gap: 10px;
-
-			> h3 {
-				font-size: 30px;
-				margin: 0;
-			}
-
-			> a, span {
-				font-size: 20px;
-				opacity: 0.75;
-			}
-		}
+	> .logo-dot {
+		color: $ac;
 	}
 }
 
+embed('client/wintegration/banner.scss')
+embed('client/nav/nav.scss')
 embed('client/landing/landing.scss')
+embed('client/wintegration/wintegration.scss')
+embed('client/members/members.scss')
+embed('client/committees/committees.scss')
 embed('client/contact/contact.scss')
+embed('client/footer/footer.scss')

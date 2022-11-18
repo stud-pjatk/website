@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
 	<meta charset="utf-8">
 	<title>Samorząd Studencki PJATK</title>
 	<meta name="description" content="Witamy na stronie Samorządu Studenckiego PJATK. Na naszej stronie znajdziesz wszelkie  informacje dotyczące przebiegu studiów oraz aktywności samorządowej.">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="keywords" content="">
+	<meta name="keywords" content="pjatk,student,council">
 	<meta name="theme-color" content="#ebe6d3"/>
 
-	<meta property="og:url" content="https://samorzad.pjatk.org/">
+	<meta property="og:url" content="https://stud.pjatk.org/">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Samorząd Studencki PJATK">
 	<meta name="og:description" content="Witamy na stronie Samorządu Studenckiego PJATK. Na naszej stronie znajdziesz wszelkie  informacje dotyczące przebiegu studiów oraz aktywności samorządowej.">
-	<meta property="og:image" content="https://samorzad.pjatk.org/icon192.png">
+	<meta property="og:image" content="https://stud.pjatk.org/icon192.png">
 
 	<link rel="manifest" href="site.webmanifest">
 	<link rel="apple-touch-icon" href="icon192.png">
@@ -42,39 +42,16 @@
 	</div>
 	embed('client/landing/landing.htm')
 	embed('client/wintegration/wintegration.htm')
-	<div id="news" class="page"></div>
-	<div id="psych-aid" class="page"></div>
-	<div id="stud-guide" class="page"></div>
-	<div id="scholarship" class="page"></div>
-	<div id="stud-exchange" class="page"></div>
-	<div id="about-us" class="page"></div>
-	<div id="members" class="page"></div>
-	<div id="committees" class="page"></div>
+	embed('client/news/news.htm')
+	embed('client/psych.htm')
+	embed('client/guide.htm')
+	embed('client/scholarship.htm')
+	embed('client/exchange.htm')
+	embed('client/about.htm')
+	embed('client/members/members.htm')
+	embed('client/committees/committees.htm')
 	embed('client/contact/contact.htm')
-	<footer>
-		<div class="content">
-			<div>
-				<h3>Student</h3>
-				<a class="page-link" href="/psych-aid">Pomoc Psychologiczna</a>
-				<a class="page-link" href="/stud-guide">Student Guide</a>
-				<a class="page-link" href="/scholarship">Stypendia</a>
-				<a class="page-link" href="/stud-exchange">Wymiana Międzynarodowa</a>
-			</div>
-			<div>
-				<h3>Samorząd</h3>
-				<a class="page-link" href="/about-us">O nas</a>
-				<a class="page-link" href="/members">Członkowie</a>
-				<a class="page-link" href="/committees">Komisje</a>
-			</div>
-			<div>
-				<h3>Kontakt</h3>
-				<span>Polsko-Japońska Akademia Technik Komputerowych</span>
-				<span>Budynek B, ul. Koszykowa 86/243</span>
-				<span>02-008 Warszawa</span>
-				<a href="mailto:smrz@pjwstk.edu.pl">smrz@pjwstk.edu.pl</a>
-			</div>
-		</div>
-	</footer>
+	embed('client/footer/footer.htm')
 </body>
 
 </html>

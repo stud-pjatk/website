@@ -2,7 +2,7 @@
 	> #land-slides {
 		position: relative;
 		display: flex; justify-content: center; align-items: center;
-		width: calc(100% + 50px); height: 500px;
+		width: calc(100% + 50px); min-height: 500px;
 		transform: translateX(-25px);
 		overflow: hidden;
 		
@@ -108,18 +108,48 @@
 
 		> #land-about {
 			@media only screen and (max-width: 700px) {
-				flex-direction: column-reverse; align-items: flex-start;
+				flex-direction: column; align-items: flex-start;
+
+				#inter-logo {
+					width: 100%;
+				}
 			}
 
 			display: flex; align-items: center; gap: 40px;
 			margin: 40px 0;
 
-			> svg {
-				width: 20%; height: 100%;
+			#inter-logo-desc {
+				position: fixed;
+				max-width: 300px;
+				padding: 8px 10px;
+				background: $bg;
+				border: 2px solid $fg;
+				transform: translateY(-100%);
+				pointer-events: none;
+				visibility: hidden;
+				z-index: 10;
+			}
+
+			#inter-logo {
+				position: relative;
+				flex: 1;
+
+				> div {
+					position: absolute;
+					cursor: help;
+				}
+				
+				> svg {
+					height: 100%;
+					
+					> * {
+						transition: opacity 200ms;
+					}
+				}
 			}
 
 			> div {
-				flex: 1;
+				flex: 3;
 
 				> h1 {
 					margin: 0;

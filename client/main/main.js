@@ -47,8 +47,8 @@ const updatePage = path => {
 		document.querySelector(`.nav-link[href="/${splitPath[1]}"]`)?.classList.add('nav-link-active')
 	}
 
-	page.style = '';
-	window.scrollTo({ top: 0, behavior: 'smooth' })
+	page.style = ''
+	document.body.scrollTo({ top: 0, behavior: 'smooth' })
 
 	return path
 }

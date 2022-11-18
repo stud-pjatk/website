@@ -40,6 +40,7 @@ nav {
 
 		> div {
 			position: relative;
+			padding: 10px 0;
 
 			&:hover > .dropdown {
 				display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
@@ -50,8 +51,8 @@ nav {
 			display: none;
 			position: absolute; top: 100%; left: -20px;
 			background: #fff;
-			padding: 20px;
-			border-radius: 10px;
+			padding: 10px 14px;
+			border: 2px solid #30201e;
 		}
 
 		#lang-switcher {
