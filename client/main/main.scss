@@ -28,6 +28,14 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Lexend Deca', sans-serif;
 }
 
+*:first-child {
+	margin-top: 0;
+}
+
+*:last-child {
+	margin-bottom: 0;
+}
+
 a {
 	position: relative;
 	color: inherit;
@@ -68,7 +76,7 @@ button {
 button, input, textarea {
 	background: $bg;
 	padding: 5px 8px;
-	border: 2px solid $fg;
+	border: 3px solid $fg;
 	font-family: inherit;
 	font-size: 16px;
 }
@@ -78,8 +86,14 @@ button, input, textarea {
 		0% { transform: translateX(25px); }
 	}
 
+
 	animation: fly 200ms;
 	z-index: 10;
+
+	> .content {
+		display: flex; flex-direction: column;
+		margin-top: 20px; margin-bottom: 20px;
+	}
 }
 
 .content {

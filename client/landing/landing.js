@@ -26,7 +26,12 @@ const landingAutorun = () => {
 		'Ideogram japoński oznaczający "moc". Razem z ideogramem "grupa" tworzy złożenie, które stanowi silne połączenie znaczeniowe, które mówi o mocy wynikającej ze współdziałania.',
 	]
 	window.addEventListener('mousemove', e => {
-		desc.style.left = `${e.clientX - 10}px`
+		desc.style.left = desc.style.right = '';
+		if (e.clientX > window.outerWidth / 2) {
+			desc.style.right = `${window.outerWidth - e.clientX - 10}px`
+		} else {
+			desc.style.left = `${e.clientX - 10}px`
+		}
 		desc.style.top = `${e.clientY - 10}px`
 	})
 	logoTriggers.forEach(t => {

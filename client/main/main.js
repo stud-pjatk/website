@@ -1,5 +1,8 @@
+embed('client/translate.js')
+embed('client/nav/nav.js')
 embed('client/landing/landing.js')
 embed('client/wintegration/wintegration.js')
+embed('client/contact/contact.js')
 
 const autoruns = {
 	'landing': { func: landingAutorun },
@@ -47,6 +50,8 @@ const updatePage = path => {
 		document.querySelector(`.nav-link[href="/${splitPath[1]}"]`)?.classList.add('nav-link-active')
 	}
 
+	document.getElementById('nav-menu').style.display = 'none'
+
 	page.style = ''
 	document.body.scrollTo({ top: 0, behavior: 'smooth' })
 
@@ -67,7 +72,10 @@ const autorun = () => {
 
 	updatePage(location.pathname)
 
+	languageAutorun()
+	navAutorun()
 	wintegralAutorun()
+	contactAutorun()
 }
 
 document.addEventListener("DOMContentLoaded", autorun)

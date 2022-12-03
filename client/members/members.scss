@@ -1,4 +1,8 @@
 #members {
+	> .content {
+		gap: 30px;
+	} 
+
 	summary > h2 {
 		display: inline-block;
 	}
