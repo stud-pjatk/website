@@ -3,6 +3,8 @@ import { argv } from 'process'
 import babel from '@babel/core'
 import sass from 'sass'
 import { minify } from 'html-minifier'
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
 
 const is_dev = argv[2] == '--dev'
 const load = path => fs.readFileSync(path).toString()
@@ -25,7 +27,7 @@ async function embed(file) {
 			if (filename.endsWith('main.scss')) {
 				embeded = sass.compileString(embeded).css
 				if (!is_dev) {
-					embeded = await require('postcss')([require('autoprefixer')]).process(embeded).css
+					embeded = await postcss([autoprefixer]).process(embeded).css
 				}
 			}
 
