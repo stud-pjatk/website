@@ -2,9 +2,8 @@
 	> #land-slides {
 		position: relative;
 		display: flex; justify-content: center; align-items: center;
-		width: calc(100% + 50px); min-height: 500px;
+		width: 100%; min-height: 500px;
 		background: $fg;
-		transform: translateX(-25px);
 		overflow: hidden;
 		
 		> .content {
@@ -14,7 +13,6 @@
 
 			> h1 {
 				color: $bg;
-				font-size: 40px;
 				margin: 0;
 			}
 
@@ -53,61 +51,6 @@
 	}
 
 	> .content {
-		> #land-news {
-			display: flex; flex-direction: column; gap: 10px;
-	
-			> .mini-news {
-				@media only screen and (max-width: 700px) {
-					flex-direction: column;
-					height: initial;
-				}
-
-				position: relative;
-				display: flex;
-				height: 100px;
-				background: $fg; color: $bg;
-				border: 3px solid $fg;
-				overflow: hidden;
-
-				> img {
-					width: 100px; height: 100px;
-					z-index: 10;
-				}
-
-				> .right {
-					flex-grow: 1;
-					display: flex; flex-direction: column;
-					padding: 10px;
-					margin-right: 70px;
-					z-index: 10;
-
-					> * {
-						margin: 0;
-					}
-
-					> h3 {
-						font-size: 24px;
-
-						> .date {
-							display: inline;
-							background: #d42031;
-							padding: 0 4px;
-						}
-					}
-
-					> .arrow {
-						@media only screen and (max-width: 700px) {
-							display: none;
-						}
-
-						position: absolute; top: 50%; right: 30px;
-						height: 40px;
-						transform: translateY(-50%);
-					}
-				}
-			}
-		}
-
 		> #land-about {
 			@media only screen and (max-width: 700px) {
 				flex-direction: column; align-items: flex-start;

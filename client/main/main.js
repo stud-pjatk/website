@@ -2,10 +2,13 @@ embed('client/translate.js')
 embed('client/nav/nav.js')
 embed('client/landing/landing.js')
 embed('client/wintegration/wintegration.js')
+embed('client/news/news.js')
 embed('client/contact/contact.js')
 
 const autoruns = {
 	'landing': { func: landingAutorun },
+	'wintegration': { func: wintegrationAutorun },
+	'contact': { func: contactAutorun },
 }
 
 const triggerAutorun = name => {
@@ -42,6 +45,13 @@ const updatePage = path => {
 		document.getElementById('wintegrat-banner').removeAttribute('background')
 	}
 
+	if (splitPath[1] === 'news' && splitPath.length > 2) {
+		page = document.getElementById('news-page')
+		fetch(`/news/${splitPath[2]}/news.htm`).then(res => res.text()).then(text => {
+			document.getElementById('news-page-content').innerHTML = text
+		})
+	}
+
 	if (!page) {
 		page = document.getElementById('not-found')
 	}
@@ -74,8 +84,6 @@ const autorun = () => {
 
 	languageAutorun()
 	navAutorun()
-	wintegralAutorun()
-	contactAutorun()
 }
 
 document.addEventListener("DOMContentLoaded", autorun)

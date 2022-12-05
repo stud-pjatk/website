@@ -23,13 +23,16 @@ for (let i = 0; i < 6; ++i) {
 for (const news of fs.readdirSync('res/news')) {
 	const newsPath = path.join('res/news', news)
 	get(`news/${news}/cover.jpg`, 'image/jpeg', load(path.join(newsPath, 'cover.jpg')))
-	const newsData = JSON.parse(load(path.join(newsPath, 'news.json')))
-	const header = newsData.header
+	const newsData = JSON.parse(load(path.join(newsPath, 'data.json')))
+	const title = newsData.title
 	const description = newsData.description
-	const content = newsData.content
+	get(`news/${news}/news.htm`, 'text/html', load(path.join(newsPath, 'news.htm')))
 	for (const newsFile of newsData.files) {
-		// TODO serve files
+		get(`news/${news}/${newsFile}`, 'image/jpeg', load(path.join(newsPath, newsFile)))
 	}
+}
+for (let i = 0; i < 10; ++i) {
+	get(`wintegration${i}.jpg`, 'image/jpeg', load(`res/wintegration/photo${i}.jpg`))
 }
 get('site.webmanifest', 'application/manifest+json', load('res/site.webmanifest'))
 get('robots.txt', 'text/plain', load('res/robots.txt'))

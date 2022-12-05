@@ -1,9 +1,27 @@
 #wintegration {
-	h1 {
-		font-size: 60px;
-	}
+	#wintegration-slides {
+		position: relative;
+		width: 600px; height: 400px;
+		
+		#wintegration-slides-left, #wintegration-slides-right {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 10;
+		}
 
-	h2 {
-		font-size: 50px;
+		#wintegration-slides-left {
+			left: 0;
+		}
+
+		#wintegration-slides-right {
+			position: absolute;
+			right: 0;
+		}
+
+		img {
+			position: absolute;
+			width: 100%; height: 100%;
+		}
 	}
 }

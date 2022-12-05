@@ -63,6 +63,17 @@ nav {
 		}
 	}
 
+	button {
+		background: none;
+		border: none;
+		padding: 5px;
+		width: 30px; height: 30px;
+
+		> svg {
+			height: 100%;
+		}
+	}
+
 	#nav-menu-button {
 		@media only screen and (max-width: 700px) {
 			display: block !important;

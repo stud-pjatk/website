@@ -25,8 +25,14 @@ const landingAutorun = () => {
 		'Czerwone koło nawiązuje kolorem do flagi Polskiej, kształtem do flagi Japonii, oraz logotypu uczelni. We fladze japońskiej symbolizuje wschodzące słońce - przekładając to na nasz logotyp - rodzące się idee, energię nowego życia.',
 		'Ideogram japoński oznaczający "moc". Razem z ideogramem "grupa" tworzy złożenie, które stanowi silne połączenie znaczeniowe, które mówi o mocy wynikającej ze współdziałania.',
 	]
+	const descsEnglish = [
+		'The whole is enclosed in a rectangle referring to the traditional Japanese seal, which is the equivalent of a personal signature.',
+		'Japanese ideogram meaning "power". Together with the "group" ideogram, it forms a strong combination that refers to the power coming from cooperation.',
+		'The red circle refers in color to the Polish flag and in shape to the flags of Japan, and University\'s logotype. In the Japanese flag, it symbolizes the rising sun. In our logotype - emerging ideas and the energy of new life.',
+		'Japanese ideogram meaning "group". Together with the "power" ideogram, it forms a strong combination that refers to the power coming from cooperation.',
+	]
 	window.addEventListener('mousemove', e => {
-		desc.style.left = desc.style.right = '';
+		desc.style.left = desc.style.right = ''
 		if (e.clientX > window.outerWidth / 2) {
 			desc.style.right = `${window.outerWidth - e.clientX - 10}px`
 		} else {
@@ -38,7 +44,7 @@ const landingAutorun = () => {
 		t.addEventListener('mouseover', () => {
 			desc.style.visibility = 'visible'
 			const index = t.getAttribute('index')
-			desc.innerText = descs[index]
+			desc.innerText = english ? descsEnglish[index] : descs[index]
 			logoParts.forEach(p => p.style.opacity = '0.4')
 			logoParts[index].style = ''
 		})
