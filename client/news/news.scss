@@ -4,7 +4,7 @@
 	> .mini-news {
 		@media only screen and (max-width: 700px) {
 			flex-direction: column;
-			height: initial;
+			height: unset;
 		}
 
 		position: relative;
