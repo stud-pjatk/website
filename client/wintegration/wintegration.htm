@@ -1,42 +1,87 @@
 <div id="wintegration" class="page">
 	<div class="content">
-		<h1>🎄 <span en="PJAIT Wintegration '23">Wintegral PJATK '23</span> 🎄</h1>
-		<h2>Zapraszamy wszystkich Studentów naszej Uczelni na zimowy wyjazd integracyjny Wintegral! Czeka Was dużo atrakcji zimowych, imprez i niespodzianek!</h2>
-		<h3>
-			Gdzie? Borowy Dwór Biznes, Spa & Fun, Cieplice, Szaflary
-			<br>
-			Kiedy? 20.02 - 24.02 2023
-			<br>
-			<!-- Za ile? 1200 zł (Cena dla pierwszych 50 osób.) -->
-			Zapisy już niedługo!
-		</h3>
-		<p>Atrakcje:</p>
+		<h1><span en="PJAIT Wintegration '23">Wintegral PJATK '23</span> 🎄</h1>
+		<h2 en="We would like to invite all Students of our Academy for a Winter Integration Trip! Many winter attractions, parties and suprises await you!">Zapraszamy wszystkich Studentów naszej Uczelni na Zimowy Wyjazd Integracyjny! Czeka Was dużo atrakcji zimowych, imprez i niespodzianek!</h2>
+		<span><b en="When?">Kiedy?</b> <span en="February 24 - 28th">24 - 28 lutego</span> 📅</span>
+		<span><b en="Where?">Gdzie?</b> <span en="„Willa u Ziomka” Resort">Ośrodek „Willa u Ziomka”</span>, Murzasichle 🏕️</span>
+		<span><b en="How much?">Za ile?</b> <span en="720zł for the first 50 people, then 1120zł.">720 zł dla pierwszych 50 osób, potem 1120 zł.</span> 💸</span>
+		<b en="What have we prepared for you?">Co dla was przewidzieliśmy?</b>
 		<ul>
-			<li>narty i snowboard 🏂</li>
-			<li>termy ♨️</li>
-			<li>kulig 🦌</li>
-			<li>codzienne imprezy 🎉</li>
-			<li>i wiele niespodzianek! 🎁</li>
+			<li><span en="everyday parties">codzienne imprezy</span> 🎉</li>
+			<li><span en="sleigh ride">kulig</span> 🦌</li>
+			<li><span en="thermal baths">termy</span> ♨️</li>
+			<li><span en="and many suprises!">i wiele niespodzianek!</span> 🎁</li>
 		</ul>
-		<!-- <p>Liczba miejsc jest ograniczona. Zachęcamy do zapisania się jeszcze dziś 😉</p> -->
+		<p>
+			<b en="Sounds promising? Register now:">Brzmi przekonywująco? Zarejestruj sie już teraz:</b>
+			<a en="Click here!" id="wintegration-register" class="page-link" href="#register">Kliknij tutaj!</a>
+		</p>
 		<div id="wintegration-slides">
-			<button id="wintegration-slides-left">
-				<svg viewBox="0 0 256 512"><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
-			</button>
-			<button id="wintegration-slides-right">
-				<svg viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-			</button>
-			<img src="/wintegration0.jpg">
-			<img style="display:none" src="/wintegration1.jpg">
-			<img style="display:none" src="/wintegration2.jpg">
-			<img style="display:none" src="/wintegration3.jpg">
-			<img style="display:none" src="/wintegration4.jpg">
-			<img style="display:none" src="/wintegration5.jpg">
-			<img style="display:none" src="/wintegration6.jpg">
-			<img style="display:none" src="/wintegration7.jpg">
-			<img style="display:none" src="/wintegration8.jpg">
-			<img style="display:none" src="/wintegration9.jpg">
+			<div style="background-image:url('/wintegration0.jpg');"></div>
+			<div style="background-image:url('/wintegration1.jpg');"></div>
+			<div style="background-image:url('/wintegration2.jpg');"></div>
+			<div style="background-image:url('/wintegration3.jpg');"></div>
+			<div style="background-image:url('/wintegration4.jpg');"></div>
+			<div style="background-image:url('/wintegration5.jpg');"></div>
+			<div style="background-image:url('/wintegration6.jpg');"></div>
+			<div style="background-image:url('/wintegration7.jpg');"></div>
+			<div style="background-image:url('/wintegration8.jpg');"></div>
 		</div>
-		<p>Aby móc wziąć udział należy mieć ukończone 18 lat.</p>
+		<h2 en="Registration Form" id="wintegration-form-header">Formularz Zgłoszeniowy</h2>
+		<span en="Registration is open until February 9th.">Zgłoszenia przyjmujemy do 9 lutego.</span>
+		<form id="register">
+			<label>
+				<span en="Full name:">Imię i nazwisko:</span>
+				<input class="frame" required>
+			</label>
+			<label>
+				<span en="Date of birth:">Numer PESEL:</span>
+				<input class="frame" required>
+				<span en="(To go you have to be at least 18 years old)">(Aby móc wziąć udział należy mieć ukończone 18 lat)</span>
+			</label>
+			<label>
+				<span en="Email address:">Adres email:</span>
+				<input class="frame" type="email" required>
+			</label>
+			<label>
+				<span en="Phone number:">Numer telefonu:</span>
+				<input class="frame" type="tel" required>
+			</label>
+			<label>
+				<span en="Phone number(s) of an authorized person to contact:">Numer(y) telefonu do osoby upoważnionej do kontaktu:</span>
+				<input class="frame" required>
+			</label>
+			<label>
+				<span en="Year of study:">Rok studiów:</span>
+				<select class="frame" required>
+					<option selected disabled>---</option>
+					<option value="1" en="Freshman">Rok I</option>
+					<option value="2" en="Sophomore">Rok II</option>
+					<option value="3" en="Junior">Rok III</option>
+					<option value="4" en="Senior">Rok IV</option>
+				</select>
+			</label>
+			<label>
+				<span en="Field of study:">Kierunek studiów:</span>
+				<select class="frame" required>
+					<option selected disabled>---</option>
+					<option value="cs" en="Computer Science">Informatyka</option>
+					<option value="jc" en="Japanese Culture">Kultura Japonii</option>
+					<option value="im" en="Information Management">Zarządzanie Informacją</option>
+					<option value="nma" en="New Media Arts">Sztuka Nowych Mediów</option>
+					<option value="id" en="Interior Design">Architektura Wnętrz</option>
+				</select>
+			</label>
+			<label>
+				<span en="Dietary restrictions:">Ograniczenia związane z dietą:</span>
+				<input class="frame">
+			</label>
+			<label>
+				<span en="Medications you are taking, allergies, diagnosed diseases:">Zażywane leki, uczulenia, zdiagnozowane choroby:</span>
+				<input class="frame">
+			</label>
+			<button en="Send" id="wintegration-register-submit" class="frame" type="submit">Wyślij</button>
+			<span id="wintegration-register-success" style="display:none">Dzięki za zgłoszenie! Widzimy sie już 24 lutego, kolejne informacje będziemy wysyłać mailowo.</span>
+		</form>
 	</div>
 </div>

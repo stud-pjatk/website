@@ -1,32 +1,18 @@
-let slideIndex = 0
-
-const changeSlide = index => {
-	const slides = document.querySelectorAll('#wintegration-slides > img')
-	// const dots = document.getElementsByClassName('demo')
-
-	if (index > slides.length - 1) {
-		slideIndex = 0
-	} else if (index < 0) {
-		slideIndex = slides.length - 1
-	}
-
-	for (let i = 0; i < slides.length; ++i) {
-		slides[i].style.display = 'none'
-	}
-	// for (let i = 0; i < dots.length; ++i) {
-	// 	dots[i].className = dots[i].className.replace(' w3-white', '')
-	// }
-	slides[slideIndex].style = ''
-	// dots[slideIndex].className += ' w3-white'
-}
-
 const wintegrationAutorun = () => {
-	// changeSlide(slideIndex = n)
+	const form = document.getElementById('register');
 
-	document.getElementById('wintegration-slides-left').addEventListener('click', () => {
-		changeSlide(slideIndex -= 1)
-	})
-	document.getElementById('wintegration-slides-right').addEventListener('click', () => {
-		changeSlide(slideIndex += 1)
-	})
-}
+	document.getElementById('wintegration-register').addEventListener('click', () => {
+		form.scrollIntoView();
+	});
+
+	form.addEventListener('submit', () => {
+		fetch('/wintegration/register', {
+			method: 'POST',
+			body: JSON.stringify([...form.querySelectorAll('input, select')].map(i => i.value)),
+		}).then(() => {
+			document.getElementById('wintegration-register-submit').setAttribute('disabled', true);
+			document.getElementById('wintegration-register-success').style = '';
+		}).catch(() => {});
+		return false;
+	});
+};
