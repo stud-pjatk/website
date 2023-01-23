@@ -5,7 +5,8 @@ const wintegrationAutorun = () => {
 		form.scrollIntoView();
 	});
 
-	form.addEventListener('submit', () => {
+	form.addEventListener('submit', e => {
+		e.preventDefault();
 		fetch('/wintegration/register', {
 			method: 'POST',
 			body: JSON.stringify([...form.querySelectorAll('input, select')].map(i => i.value)),
