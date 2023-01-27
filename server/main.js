@@ -37,7 +37,7 @@ app.post('/wintegration/register', res => {
 	});
 });
 
-app.get('/1447a325/0628/479f/a84f/89ca6010f350', res => {
+app.get('/1447a325/0628/479f/a84f/89ca6010f350', (res, req) => {
 	res.onAborted(() => {});
 	res.writeHeader('Content-Type', 'text/html');
 	if (req.getQuery() == fs.readFileSync('stop_stalking_ffs')) {
