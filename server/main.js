@@ -1,7 +1,6 @@
 import { App } from 'uWebSockets.js';
 import { argv } from 'process';
 import { randomBytes } from 'crypto';
-import { readdirSync, readFileSync } from 'fs';
 
 const is_dev = argv[2] == '--dev';
 const app = App();
@@ -26,7 +25,7 @@ app.post('/wintegration/register', res => {
 app.get('/1447a325/0628/479f/a84f/89ca6010f350', res => {
 	res.onAborted(() => {});
 	res.writeHeader('Content-Type', 'text/html');
-	res.end(`<table><tbody>${readdirSync('wintegration').map(f => `<tr><td>${JSON.parse(readFileSync(f).toString()).join('</td><td>')}</td></tr>`)}</tbody></table>`);
+	res.end(`<head><style>table{border-collapse:collapse}th,td{border:1px solid #000;padding:5px}</style></head><body style="display:none"><table><thead><tr><th>name</th><th>age</th><th>email</th><th>phone</th><th>other phone</th><th>year</th><th>field</th><th>diet</th><th>meds</th><tr></thead><tbody>${fs.readdirSync('wintegration').map(f => `<tr><td>${JSON.parse(fs.readFileSync(path.join('wintegration', f)).toString()).join('</td><td>')}</td></tr>`).join('')}</tbody></table></body>`);
 });
 
 app.listen('0.0.0.0', 80, token => token ? console.log(`Listening on port 80...`) : {});
