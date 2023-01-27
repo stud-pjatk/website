@@ -14,7 +14,7 @@ const app = (() => {
 		// }).listen('0.0.0.0', 80, () => {});
 
 		return SSLApp({
-			cert_file_name: 'cert.pem',
+			cert_file_name: 'fullchain.pem',
 			key_file_name: 'privkey.pem',
 		});
 	}
