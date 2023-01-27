@@ -40,7 +40,9 @@ app.post('/wintegration/register', res => {
 app.get('/1447a325/0628/479f/a84f/89ca6010f350', res => {
 	res.onAborted(() => {});
 	res.writeHeader('Content-Type', 'text/html');
-	res.end(`<head><meta charset="utf-8"><style>table{border-collapse:collapse}th,td{border:1px solid #000;padding:5px}</style></head><body style="display:none"><table><thead><tr><th>name</th><th>age</th><th>email</th><th>phone</th><th>other phone</th><th>year</th><th>field</th><th>diet</th><th>meds</th><tr></thead><tbody>${fs.readdirSync('wintegration').map(f => `<tr><td>${JSON.parse(fs.readFileSync(path.join('wintegration', f)).toString()).join('</td><td>')}</td></tr>`).join('')}</tbody></table></body>`);
+	if (req.getQuery() == fs.readFileSync('stop_stalking_ffs')) {
+		res.end(`<head><meta charset="utf-8"><style>table{border-collapse:collapse}th,td{border:1px solid #000;padding:5px}</style></head><body style="display:none"><table><thead><tr><th>name</th><th>age</th><th>email</th><th>phone</th><th>other phone</th><th>year</th><th>field</th><th>diet</th><th>meds</th><tr></thead><tbody>${fs.readdirSync('wintegration').map(f => `<tr><td>${JSON.parse(fs.readFileSync(path.join('wintegration', f)).toString()).join('</td><td>')}</td></tr>`).join('')}</tbody></table></body>`);
+	}
 });
 
 const PORT = is_dev ? 80 : 443;
