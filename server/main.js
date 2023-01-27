@@ -7,6 +7,12 @@ const app = (() => {
 	if (is_dev) {
 		return App();
 	} else {
+		new App().any('/*', (res, req) => {
+			res.writeStatus('301');
+			res.writeHeader('Location', 'https://samorzad.pja.edu.pl' + req.getUrl());
+			res.end();
+		}).listen('0.0.0.0', 80, () => {});
+
 		return SSLApp({
 			cert_file_name: 'fullchain.pem',
 			key_file_name: 'privkey.pem',
