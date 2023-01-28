@@ -49,7 +49,7 @@ app.get('/table', (res, req) => {
 	res.onAborted(() => {});
 	if (req.getQuery() == fs.readFileSync('secret').toString()) {
 		res.writeHeader('Content-Type', 'text/html');
-		const rows = fs.readdirSync('wintegration').map(f => `<tr><td>${JSON.parse(fs.readFileSync(path.join('wintegration', f)).toString()).join('</td><td>')}</td></tr>`).join('');
+		const rows = fs.readdirSync('wintegration').map(f => `<tr><td>${f.substring(0, 8)}</td><td>${JSON.parse(fs.readFileSync(path.join('wintegration', f)).toString()).join('</td><td>')}</td></tr>`).join('');
 		res.end(`<head><meta charset="utf-8"><style>table{border-collapse:collapse}th,td{border:1px solid #000;padding:5px}</style></head><body><table><thead><tr><th>name</th><th>age</th><th>email</th><th>phone</th><th>other phone</th><th>year</th><th>field</th><th>diet</th><th>meds</th><tr></thead><tbody>${rows}</tbody></table></body>`);
 	} else {
 		res.writeStatus('401'); res.end();
