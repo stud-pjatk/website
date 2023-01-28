@@ -34,7 +34,7 @@ app.post('/wintegration/register', res => {
 				if (Array.isArray(json) == false || json.length != 10) { throw ''; }
 				json.push(Date.now());
 				json.push(Buffer.from(res.getRemoteAddressAsText()).toString());
-				fs.writeFileSync(`wintegration/${randomBytes(20).toString('hex')}`, data);
+				fs.writeFileSync(`wintegration/${randomBytes(20).toString('hex')}`, JSON.stringify(json));
 				res.end('ok');
 			} catch {
 				res.writeStatus('400'); res.end();
