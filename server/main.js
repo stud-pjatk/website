@@ -50,7 +50,11 @@ app.get('/data', (res, req) => {
 	if (req.getQuery() == fs.readFileSync('secret').toString()) {
 		res.writeHeader('Content-Type', 'text/html');
 		res.writeHeader('Access-Control-Allow-Origin', '*');
-		res.end(JSON.stringify(fs.readdirSync('wintegration').map(f => fs.readFileSync(path.join('wintegration', f)).toString())));
+		res.end(JSON.stringify(fs.readdirSync('wintegration').map(f => {
+			const row = JSON.parse(fs.readFileSync(path.join('wintegration', f)));
+			row.unshift(f.substring(0, 8));
+			return JSON.stringify(row);
+		})));
 	} else {
 		res.writeStatus('401'); res.end();
 	}
