@@ -49,6 +49,7 @@ app.get('/data', (res, req) => {
 	res.onAborted(() => {});
 	if (req.getQuery() == fs.readFileSync('secret').toString()) {
 		res.writeHeader('Content-Type', 'text/html');
+		res.writeHeader('Access-Control-Allow-Origin', '*');
 		res.end(JSON.stringify(fs.readdirSync('wintegration').map(f => fs.readFileSync(path.join('wintegration', f)).toString())));
 	} else {
 		res.writeStatus('401'); res.end();
